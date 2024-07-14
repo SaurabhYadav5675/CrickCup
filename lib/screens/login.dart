@@ -12,7 +12,7 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Primary().olivGree,
+      backgroundColor: PrimaryColors().olivGree,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.end,
@@ -25,15 +25,15 @@ class _LoginState extends State<Login> {
                 Icon(
                   Icons.bookmarks_sharp,
                   size: 18,
-                  color: Primary().offWhite,
+                  color: PrimaryColors().offWhite,
                 ),
                 const Spacer(),
                 Text(
                   "Sign In",
                   style: TextStyle(
                       fontSize: 16,
-                      color: Primary().offWhite,
-                      decorationColor: Primary().offWhite,
+                      color: PrimaryColors().offWhite,
+                      decorationColor: PrimaryColors().offWhite,
                       decorationThickness: 2,
                       decoration: TextDecoration.underline),
                 ),
@@ -42,7 +42,8 @@ class _LoginState extends State<Login> {
                 ),
                 Text(
                   "Sign Up",
-                  style: TextStyle(fontSize: 16, color: Primary().offWhite),
+                  style:
+                      TextStyle(fontSize: 16, color: PrimaryColors().offWhite),
                 )
               ],
             ),
@@ -54,8 +55,8 @@ class _LoginState extends State<Login> {
               "Welcome Back,",
               style: TextStyle(
                 fontSize: 20,
-                color: Primary().offWhite,
-                decorationColor: Primary().offWhite,
+                color: PrimaryColors().offWhite,
+                decorationColor: PrimaryColors().offWhite,
               ),
             ),
           ),

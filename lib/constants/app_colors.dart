@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 class AppColors {}
 
-class Primary {
+class PrimaryColors {
   final olivGree = const Color(0xff306060);
-  final Color offWhite = const Color(0xffFCFCFB);
+  final offWhite = const Color(0xffFCFCFB);
 }
 
 class Secondry {}
