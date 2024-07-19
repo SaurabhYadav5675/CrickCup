@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:my_gadget/constants/app_colors.dart';
+
+import '../constants/app_colors.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -11,7 +12,8 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen>
     with TickerProviderStateMixin {
-  late final AnimationController _controller;
+  AnimationController? _controller;
+
   @override
   void initState() {
     _controller = AnimationController(vsync: this);
@@ -42,7 +44,7 @@ class _SplashScreenState extends State<SplashScreen>
             height: 250,
             controller: _controller,
             onLoaded: (p0) {
-              _controller
+              _controller!
                 ..duration = p0.duration
                 ..forward().whenComplete(() {
                   // Navigator.push(

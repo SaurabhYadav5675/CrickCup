@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_gadget/constants/app_colors.dart';
+import 'package:crick_cup/constants/app_colors.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});

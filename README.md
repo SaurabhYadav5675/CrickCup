@@ -1,4 +1,4 @@
-# my_gadget
+# crick_cup
 
 A new Flutter project.
 

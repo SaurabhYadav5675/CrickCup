@@ -1,4 +1,4 @@
-package com.example.my_gadget
+package com.example.crickcup
 
 import io.flutter.embedding.android.FlutterActivity
 

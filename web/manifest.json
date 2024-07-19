@@ -1,6 +1,6 @@
 {
-    "name": "my_gadget",
-    "short_name": "my_gadget",
+    "name": "crick_cup",
+    "short_name": "crick_cup",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
