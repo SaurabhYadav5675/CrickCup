@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
 import '../constants/app_colors.dart';
+import 'onbording/auth_gate.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -24,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: PrimaryColors().olivGree,
+      backgroundColor: AppColors.primaryColors.oliveGreen,
       body: Center(
           child: Stack(
         alignment: Alignment.center,
@@ -36,7 +37,7 @@ class _SplashScreenState extends State<SplashScreen>
                 style: TextStyle(
                     fontSize: 28,
                     fontWeight: FontWeight.w600,
-                    color: PrimaryColors().offWhite),
+                    color: AppColors.primaryColors.offWhite),
               )),
           Lottie.asset(
             "assets/splash_loader.json",
@@ -47,8 +48,10 @@ class _SplashScreenState extends State<SplashScreen>
               _controller!
                 ..duration = p0.duration
                 ..forward().whenComplete(() {
-                  // Navigator.push(
-                  //       context, MaterialPageRoute(builder: (context) => const Login()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const AuthGate()));
                 });
             },
           ),
