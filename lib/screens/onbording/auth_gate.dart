@@ -1,3 +1,6 @@
+import 'dart:math';
+
+import 'package:crick_cup/extensions/widget_extension.dart';
 import 'package:crick_cup/screens/onbording/sign_up.dart';
 import 'package:crick_cup/screens/onbording/sing_in.dart';
 import 'package:flutter/material.dart';
@@ -82,12 +85,49 @@ class _AuthGateState extends State<AuthGate> {
               ],
             ),
           ),
-          const SizedBox(height: 30),
-          selectedIndex == 0
-              ? const Expanded(child: SignIn())
-              : const Expanded(child: SignUp())
+          const SizedBox(height: 50),
+          Text(
+            selectedIndex == 0 ? "Welcome back," : "Hey, get on board",
+            style: TextStyle(
+                fontSize: 28, color: AppColors.primaryColors.offWhite),
+          ).paddingSymmetric(horizontal: 15),
+          const SizedBox(
+            height: 10,
+          ),
+          Text(
+            selectedIndex == 0 ? "Sign in to continue" : "Sign up to continue",
+            style: TextStyle(
+                fontSize: 16, color: AppColors.primaryColors.offWhite),
+          ).paddingSymmetric(horizontal: 15),
+          const SizedBox(
+            height: 50,
+          ),
+          Expanded(
+              child: AnimatedSwitcher(
+            duration: const Duration(milliseconds: 600),
+            transitionBuilder: __transitionBuilder,
+            child: selectedIndex == 0 ? const SignIn() : const SignUp(),
+          )),
         ],
       ),
+    );
+  }
+
+  Widget __transitionBuilder(Widget widget, Animation<double> animation) {
+    final rotateWidget = Tween(begin: pi, end: 0.0).animate(animation);
+    return AnimatedBuilder(
+      animation: rotateWidget,
+      child: widget,
+      builder: (context, widget) {
+        final isUnder = selectedIndex != 0;
+        final value =
+            isUnder ? min(rotateWidget.value, pi / 2) : rotateWidget.value;
+        return Transform(
+          transform: Matrix4.rotationY(value),
+          alignment: Alignment.center,
+          child: widget,
+        );
+      },
     );
   }
 }
