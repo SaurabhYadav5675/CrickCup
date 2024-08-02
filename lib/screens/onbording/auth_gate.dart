@@ -27,6 +27,7 @@ class _AuthGateState extends State<AuthGate> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: AppColors.primaryColors.oliveGreen,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,

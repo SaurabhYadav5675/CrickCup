@@ -1,3 +1,4 @@
+import 'package:crick_cup/constants/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:crick_cup/screens/splash_screen.dart';
 
@@ -14,10 +15,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.dartTheme,
+      themeMode: ThemeMode.light,
       home: const SplashScreen(),
     );
   }

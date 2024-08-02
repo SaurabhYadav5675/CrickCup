@@ -1,3 +1,4 @@
+import 'package:crick_cup/constants/app_svg.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
@@ -40,7 +41,7 @@ class _SplashScreenState extends State<SplashScreen>
                     color: AppColors.primaryColors.offWhite),
               )),
           Lottie.asset(
-            "assets/splash_loader.json",
+            AppSvg.loader,
             width: 350,
             height: 250,
             controller: _controller,
