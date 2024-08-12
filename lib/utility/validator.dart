@@ -1,7 +1,24 @@
 class Validator {
+  //^ indicate beginning of pattern
+  /*[a-zA-Z0-9._%+-]+ Matches the local part of the email address (before the @ symbol)
+      a-z: Lowercase letters
+      A-Z: Uppercase letters
+      0-9: Digits
+      .: Period (dot)
+      _: Underscore
+      %: Percent sign
+      +: Plus sign
+      -: Hyphen
+    */
+  //@ -> Matches the @ symbol, which separates the local and domain part of the email address.
+  //[a-zA-Z0-9.-]+\ ->Matches the domain part of the email address between @ and .
+  //[a-zA-Z]{2,} -> Matches the top-level domain, after .
+  //{2,} indicates at least 2 or more letters eg. com,org,uk,in,tech,
+  //$ indicate end of pattern
   static const emailValidator =
-      "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}\$";
+      r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
 
+  static const emailValidatorSimplified = r"^[\w.%+-]+@[\w.-]+\.[a-zA-Z]{2,}$";
   static const lowerLetterValidator = r'[a-z]';
   static const upperLetterValidator = r'[A-Z]';
   static const numericValidator = r'\d';
@@ -51,5 +68,16 @@ class Validator {
       return "Password must be at least 8 characters long.";
     }
     return passwordError.isEmpty ? null : passwordError;
+  }
+
+  static String? otpFieldValidator(String? userInput, int digit) {
+    if (userInput == null || userInput.isEmpty) {
+      return "Please enter OTP";
+    } else if (!RegExp(numericValidator).hasMatch(userInput)) {
+      return "please enter valid OTP";
+    } else if (userInput.length != digit) {
+      return "please enter $digit digit OTP";
+    }
+    return null;
   }
 }

@@ -4,6 +4,7 @@ import 'package:crick_cup/constants/app_colors.dart';
 import 'package:crick_cup/constants/app_svg.dart';
 import 'package:crick_cup/extensions/widget_extension.dart';
 import 'package:crick_cup/utility/validator.dart';
+import 'package:crick_cup/widgets/dialog_box/forgot_password.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -129,13 +130,21 @@ class _SignInState extends State<SignIn> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Text(
-                    "Forgot Password?",
-                    textAlign: TextAlign.end,
-                    style: TextStyle(
-                        color: AppColors.orange.v800,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500),
+                  InkWell(
+                    onTap: () {
+                      showDialog(
+                          context: context,
+                          barrierDismissible: false,
+                          builder: (ctx) => const ForgotPassword());
+                    },
+                    child: Text(
+                      "Forgot Password?",
+                      textAlign: TextAlign.end,
+                      style: TextStyle(
+                          color: AppColors.orange.v800,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500),
+                    ),
                   ),
                 ],
               ),
