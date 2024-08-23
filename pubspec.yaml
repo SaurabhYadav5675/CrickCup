@@ -28,9 +28,12 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  device_preview: ^1.2.0
   flutter:
     sdk: flutter
   flutter_svg: ^2.0.10+1
+  fluttertoast: ^8.2.8
+  http: ^1.2.2
   lottie: ^3.1.2
 
 

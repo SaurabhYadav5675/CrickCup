@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:crick_cup/constants/app_colors.dart';
 import 'package:crick_cup/constants/app_svg.dart';
 import 'package:crick_cup/extensions/widget_extension.dart';
-import 'package:crick_cup/utility/validator.dart';
+import 'package:crick_cup/utilities/validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
