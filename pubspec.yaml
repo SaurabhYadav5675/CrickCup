@@ -29,6 +29,8 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   device_preview: ^1.2.0
+  equatable: ^2.0.5
+  flutter_bloc: ^8.1.6
   flutter:
     sdk: flutter
   flutter_svg: ^2.0.10+1

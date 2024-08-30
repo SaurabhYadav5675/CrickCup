@@ -18,10 +18,10 @@ class HttpService {
 
   // Private method to get headers, including the token if available
   Map<String, String> _getHeaders(String? authToken) {
-    final headers = {'Content-Type': 'application/json'};
-    if (authToken != null) {
-      headers['Authorization'] = 'Bearer $authToken';
-    }
+    final headers = {
+      'x-rapidapi-host': 'cricbuzz-cricket.p.rapidapi.com',
+      'x-rapidapi-key': 'f0967aea64mshcf72e88e4acd31ap19a40cjsn156e3336d86b'
+    };
     return headers;
   }
 
