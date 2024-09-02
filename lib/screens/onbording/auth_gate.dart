@@ -105,7 +105,7 @@ class _AuthGateState extends State<AuthGate> {
           ),
           Expanded(
               child: AnimatedSwitcher(
-            duration: const Duration(milliseconds: 600),
+            duration: const Duration(milliseconds: 1500),
             transitionBuilder: __transitionBuilder,
             child: selectedIndex == 0 ? const SignIn() : const SignUp(),
           )),
@@ -124,7 +124,9 @@ class _AuthGateState extends State<AuthGate> {
         final value =
             isUnder ? min(rotateWidget.value, pi / 2) : rotateWidget.value;
         return Transform(
-          transform: Matrix4.rotationY(value),
+          transform: Matrix4.identity()
+            ..setEntry(3, 2, selectedIndex == 0 ? 0.00002 : 0.0002)
+            ..rotateY(value),
           alignment: Alignment.center,
           child: widget,
         );
