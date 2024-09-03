@@ -4,6 +4,7 @@ class AppColors {
   static final primaryColors = PrimaryColors();
   static final darkGrey = DarkGrey();
   static final orange = Orange();
+  static final oliveGreen = OliveGreen();
 }
 
 class PrimaryColors {
@@ -37,4 +38,18 @@ class Orange {
   final Color v700 = const Color(0xB3FFA500);
   final Color v800 = const Color(0xCCFFA500);
   final Color v900 = const Color(0xFFFFA500);
+}
+
+class OliveGreen {
+  final Color v0 = const Color(0x0C306060);
+  final Color v50 = const Color(0x0D306060);
+  final Color v100 = const Color(0x1A306060);
+  final Color v200 = const Color(0x33306060);
+  final Color v300 = const Color(0x4D306060);
+  final Color v400 = const Color(0x66306060);
+  final Color v500 = const Color(0x80306060);
+  final Color v600 = const Color(0x99306060);
+  final Color v700 = const Color(0xB3306060);
+  final Color v800 = const Color(0xCC306060);
+  final Color v900 = const Color(0xFF306060);
 }
