@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:crick_cup/constants/app_colors.dart';
 import 'package:crick_cup/constants/app_svg.dart';
 import 'package:crick_cup/extensions/widget_extension.dart';
+import 'package:crick_cup/services/firebase_auth.dart';
+import 'package:crick_cup/utilities/utility.dart';
 import 'package:crick_cup/utilities/validator.dart';
 import 'package:crick_cup/widgets/dialog_box/forgot_password.dart';
 import 'package:flutter/material.dart';
@@ -38,6 +40,25 @@ class _SignInState extends State<SignIn> {
     super.dispose();
   }
 
+  Future<void> signIn() async {
+    print("Data11 calling");
+    final email = emailController.text;
+    final password = passwordController.text;
+
+    print("Data11 email $email password $password ");
+    try{
+    final result =
+        await FirebaseAuthentication().signEmailPassword(email, password);
+    print("Data11 result $result");
+    if (result != null) {
+      Utility.toastMessage("Happy coding");
+    } else {
+      Utility.toastMessage("Oops, please enter valid details.");
+    }}catch(e,s){
+      print("Data11 error in main $e $s");
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -55,6 +76,7 @@ class _SignInState extends State<SignIn> {
                 height: 40,
               ),
               TextFormField(
+                controller: emailController,
                 maxLines: 1,
                 style: TextStyle(
                     fontSize: 18,
@@ -83,6 +105,7 @@ class _SignInState extends State<SignIn> {
                 builder: (context, value) {
                   bool visibility = value.data ?? false;
                   return TextFormField(
+                    controller: passwordController,
                     keyboardType: TextInputType.visiblePassword,
                     textInputAction: TextInputAction.done,
                     obscureText: !visibility,
@@ -181,7 +204,9 @@ class _SignInState extends State<SignIn> {
               ),
               OutlinedButton(
                 onPressed: () {
-                  if (_formKey.currentState!.validate()) {}
+                  if (_formKey.currentState!.validate()) {
+                    signIn();
+                  }
                 },
                 style: OutlinedButton.styleFrom(
                   backgroundColor: AppColors.primaryColors.oliveGreen,

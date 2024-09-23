@@ -57,10 +57,10 @@ class _AppLoaderState extends State<AppLoader> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 100,
-      width: 100,
-      child: Center(
+    return Center(
+      child: SizedBox(
+        height: 100,
+        width: 100,
         child: RotationTransition(
           turns: _animationRotation!,
           child: Stack(

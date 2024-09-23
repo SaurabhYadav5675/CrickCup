@@ -13,7 +13,7 @@ class RecentMatchCubit extends Cubit<RecentMatchState> {
     final response = await HttpService().get(ApiUrl.recentMatches);
     if (response != null) {
       final result = await compute(RecentMatch.fromJson, response);
-      emit(state.copyWith(matchData: result));
+      emit(state.copyWith(matchData: result, isLoading: false));
     }
   }
 }

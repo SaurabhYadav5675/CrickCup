@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "938555820626",
+    "project_id": "crick-cup",
+    "storage_bucket": "crick-cup.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:938555820626:android:ee77e6a65f50522851ad8b",
+        "android_client_info": {
+          "package_name": "com.example.crickcup"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBx-ygEAr0btI84vBvo8Sjuiboj9qhrtAE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
